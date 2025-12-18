@@ -15,10 +15,11 @@ const SyuinChou = ({ selectedItemId, handleBackClick }) => {
             <img src={Images.syuin_chou_regular} alt="" />
             <figcaption>御朱印帳</figcaption>
           </figure>
-          <figure className="photo-frame">
+          {/* 250131 fix */}
+          {/* <figure className="photo-frame">
             <img src={Images.syuin_chou_limited} alt="" />
             <figcaption>限定御朱印帳</figcaption>
-          </figure>
+          </figure> */}
         <button onClick={handleBackClick}>戻る</button>
       </div>     
     </div>

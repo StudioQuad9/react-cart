@@ -1,0 +1,127 @@
+.container {
+  position: relative;
+  padding: 100px 10% 60px;
+  background: url(/src/images/bg.png) repeat;
+}
+
+@media (width >= 768px) {
+  .container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (width >= 1100px) {
+  .container {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+@media (width >= 1700px) {
+  .container {
+    grid-template-columns: 4fr 1fr;
+  }
+}
+
+@media (width < 768px) {
+  .container {
+    padding: 60px 10% 60px;
+  }
+}
+
+.frame.amulet {
+  background-image: url(/src/images/omamori-top.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 63vh;
+}
+.frame.amulet h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55%;
+  padding: 25px 120px;
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: #fff;
+  border: 1px solid #fff;
+  white-space: nowrap;
+}
+
+h3 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+h3::before, h3::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  width: calc(50% - 190px);
+  height: 1px;
+  background-color: #333;
+}
+h3::before {
+  left: 0;
+}
+h3::after {
+  right: 0;
+}
+
+.to-page-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  right: 82px;
+  width: 45px;
+  aspect-ratio: 1;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.page-top-arrow {
+  width: 20px;
+  aspect-ratio: 1;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: translateY(20%) rotate(-45deg);
+}
+
+@media (width >= 1700px) {
+  .to-page-top {
+    right: 200px;
+  }
+}
+@media (width < 768px) {
+  .to-page-top {
+    bottom: 30px;
+    right: 40px;
+  }
+}
+@media (width < 768px) {
+  .frame.amulet {
+    height: 50vh;
+  }
+  .frame.amulet h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    padding: 12px 30px;
+    font-size: 1.65rem;
+    letter-spacing: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: unset;
+    white-space: nowrap;
+  }
+}/*# sourceMappingURL=App.css.map */

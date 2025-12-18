@@ -1,0 +1,168 @@
+@charset "UTF-8";
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px #eee;
+}
+.card .image_frame-info .image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #eee;
+}
+.card .image_frame-info .image-frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .image_frame-info .image-frame .mask-btn.details {
+  position: absolute;
+  bottom: -38px;
+  right: 15px;
+  z-index: 100;
+}
+.card .image_frame-info .item-info {
+  position: relative;
+  padding: 50px 20px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+}
+.card .image_frame-info .item-info .name {
+  margin: 0 0 15px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #c2bdb8;
+}
+.card .image_frame-info .item-info .name li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.card .image_frame-info .item-info .name li .item-name {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card .image_frame-info .item-info .name li > input {
+  width: 3rem;
+  text-align: right;
+  color: #777;
+  background-color: #eee;
+  border-radius: 5px;
+  text-align: right;
+}
+.card .image_frame-info .item-info .types, .card .image_frame-info .item-info .colors {
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-left: 25px;
+  font-size: 0.95rem;
+  line-height: 1.2em;
+}
+.card .image_frame-info .item-info .types::before, .card .image_frame-info .item-info .colors::before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  font-size: 0.75rem;
+  line-height: 1em;
+  font-weight: 500p;
+  padding: 1.5px 2px;
+  color: #fff;
+  background-color: #777;
+}
+.card .image_frame-info .item-info .types li, .card .image_frame-info .item-info .colors li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card .image_frame-info .item-info .types li span, .card .image_frame-info .item-info .colors li span {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+}
+.card .image_frame-info .item-info .types li input, .card .image_frame-info .item-info .colors li input {
+  width: 3rem;
+  text-align: right;
+  color: #777;
+  background-color: #eee;
+  border-radius: 5px;
+}
+.card .image_frame-info .item-info .types li input::-moz-placeholder, .card .image_frame-info .item-info .colors li input::-moz-placeholder {
+  color: #777;
+}
+.card .image_frame-info .item-info .types li input::placeholder, .card .image_frame-info .item-info .colors li input::placeholder {
+  color: #777;
+}
+.card .image_frame-info .item-info .types li input[type=number]::-webkit-outer-spin-button, .card .image_frame-info .item-info .types li input[type=number]::-webkit-inner-spin-button, .card .image_frame-info .item-info .colors li input[type=number]::-webkit-outer-spin-button, .card .image_frame-info .item-info .colors li input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: block;
+  margin: 0;
+  opacity: 1;
+}
+.card .image_frame-info .item-info .types::before {
+  content: "種類";
+}
+.card .image_frame-info .item-info .colors::before {
+  content: "色";
+}
+.card .image_frame-info .item-info .types {
+  padding-left: 35px;
+}
+.card .image_frame-info .item-info .price {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.card .image_frame-info .item-info .price > span {
+  font-family: "Noto Serif JP", serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+.card .image_frame-info .item-info .price > .delimit {
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+.card .image_frame-info .item-info > div, .card .image_frame-info .item-info > ul {
+  margin-top: 10px;
+}
+.card .image_frame-info .item-info > ul {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7.5px;
+}
+.card .image_frame-info .item-info > ul.display-none {
+  display: none;
+}
+.card .mask-btn.details, .card .mask-btn.to-index {
+  padding: 5px 15px;
+  font-family: "Noto Serif JP", serif;
+  font-size: 1rem;
+  line-height: 1em;
+  font-weight: 400;
+  border: 1px solid #333;
+  transform: translateY(2px);
+  transition: 0.3s;
+}
+.card .mask-btn.details.disable, .card .mask-btn.to-index.disable {
+  opacity: 0.4;
+}
+.card .mask-btn.details:hover, .card .mask-btn.to-index.hover-active:hover, .card .mask-btn.to-index.remove-btn:hover {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px #999;
+  opacity: 0.5;
+}
+.card .mask-btn.to-index {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  z-index: 100;
+}
+.card .mask-btn.to-index.remove-btn {
+  color: #fff;
+  background-color: #999;
+  border: 1px solid #999;
+}/*# sourceMappingURL=Product.css.map */

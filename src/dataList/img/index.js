@@ -15,6 +15,8 @@ import mori_ya from "./mori_ya.jpg";
 import hama_ya from "./hama_ya.jpg";
 import traffic_safety_sticker from "./traffic_safety_sticker.png";
 import traffic_safety_car_mamori from "./traffic_safety_car_mamori.jpg";
+import warau_wa from "./warau_wa.jpg";
+import warau_wa_port from "./warau_wa_port.jpg";
 import kanau_wa_gosyoku from "./kanau_wa_gosyoku.jpg";
 
 import kanau_wa_soccer from "./kanau_wa_soccer.jpg";
@@ -25,7 +27,13 @@ import kanau_wa_basket from "./kanau_wa_basket.jpg";
 import kanau_wa_tennis from "./kanau_wa_tennis.jpg";
 import kanau_wa_badminton from "./kanau_wa_badminton.jpg";
 import kanau_wa_table_tennis from "./kanau_wa_table_tennis.jpg";
+import kanau_wa_golf from "./kanau_wa_golf.jpg";
 import kanau_wa_all from "./kanau_wa_all.jpg";
+import kanau_wa_5climted from "./kanau_wa_5climted.jpg";
+import kanau_wa_5climted_black from "./kanau_wa_5climted_black.jpg";
+import kanau_wa_5climted_green from "./kanau_wa_5climted_green.jpg";
+import kanau_wa_5climted_sceen1 from "./kanau_wa_5climted_sceen1.jpg";
+import kanau_wa_5climted_sceen2 from "./kanau_wa_5climted_sceen2.jpg";
 
 import hair_band from "./hair_band.png";
 
@@ -36,7 +44,8 @@ import ema_sky from "./ema_sky.png";
 import ema from "./ema.png";
 import kanau_wa_hashi from "./kanau_wa_hashi.png";
 import syuin_chou from "./syuin_chou.png";
-import syuin_chou_limited from "./syuin_chou_limited.png";
+import syuin_chou_limited from "./syuin_chou_limited.jpg";
+import syuin_chou_limited_2026 from "./syuin_chou_limited_2026.jpg";
 import syuin_chou_regular from "./syuin_chou_regular.png";
 import mari_dorei from "./mari_dorei.jpg";
 import ba_tei from "./ba_tei.png";
@@ -59,6 +68,8 @@ const image = {
   hama_ya: hama_ya,
   traffic_safety_sticker: traffic_safety_sticker,
   traffic_safety_car_mamori: traffic_safety_car_mamori,
+  warau_wa: warau_wa,
+  warau_wa_port: warau_wa_port,
   kanau_wa_gosyoku: kanau_wa_gosyoku,
   kanau_wa_soccer: kanau_wa_soccer,
   kanau_wa_baseball: kanau_wa_baseball,
@@ -67,7 +78,14 @@ const image = {
   kanau_wa_tennis: kanau_wa_tennis,
   kanau_wa_badminton: kanau_wa_badminton,
   kanau_wa_table_tennis: kanau_wa_table_tennis,
+  kanau_wa_golf: kanau_wa_golf,
   kanau_wa_all: kanau_wa_all,
+  kanau_wa_5climted: kanau_wa_5climted,
+  kanau_wa_5climted_black: kanau_wa_5climted_black,
+  kanau_wa_5climted_green: kanau_wa_5climted_green,
+  kanau_wa_5climted_sceen1: kanau_wa_5climted_sceen1,
+  kanau_wa_5climted_sceen2: kanau_wa_5climted_sceen2,
+
   hair_band: hair_band,
   wrist_band: wrist_band,
   towel: towel,
@@ -77,6 +95,7 @@ const image = {
   kanau_wa_hashi: kanau_wa_hashi,
   syuin_chou: syuin_chou,
   syuin_chou_limited: syuin_chou_limited,
+  syuin_chou_limited_2026: syuin_chou_limited_2026,
   syuin_chou_regular: syuin_chou_regular,
   mari_dorei: mari_dorei,
   ba_tei: ba_tei,

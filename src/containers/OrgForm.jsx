@@ -23,7 +23,8 @@ const OrgForm = ({
   setPrefectureSelected,
   sendCompleteToggle,
   sendInputErrorToggle,
-  handlePrivacyPolicy
+  handlePrivacyPolicy,
+  reloadCartItems
 }) => {
 
   // 都道府県名
@@ -353,7 +354,14 @@ const OrgForm = ({
           <div className="note">申込み用紙の印刷ができない方は、FAX申込み用紙の必要事項をご確認のうえ他の紙に記載したものでも代用可能です。</div>
         </div>
         <div className="send-btn">
-          <button className="input-mail-btn" type="button" onClick={onSubmitEmail}>メール申し込みを送信</button>
+          <button 
+            className="input-mail-btn" 
+            type="button" 
+            onClick={onSubmitEmail}
+            disabled={reloadCartItems()[0] === 0}
+          >
+            メール申し込みを送信
+          </button>
           <div className="note">FAXでのお申込みができない方は、こちらをお選びください。ご記入いただいたメールアドレスにEメールが届きますので、<span className="underLine">届いたEメールに撮影した郵便振込用紙、または明細票を添付のうえご返信ください</span> 。<span className="underLine">届いたEメールをご返信いただいてはじめてお申し込みとなります</span>。（※メールが届かない場合、迷惑メールフィルターなどご確認ください。）</div>
         </div>
       </div>

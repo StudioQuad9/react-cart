@@ -1,0 +1,355 @@
+.cart-wrapper {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.7s;
+  visibility: hidden;
+  opacity: 0;
+  overflow: scroll;
+  z-index: 102;
+}
+.cart-wrapper.active {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.cart-wrapper .cart-container {
+  width: 75%;
+  margin: 80px auto;
+  padding: 4rem 3rem 8rem;
+  background: url(/src/images/bg.jpg);
+}
+.cart-wrapper .cart-container .component-ref {
+  position: relative;
+  margin: 0 auto;
+}
+.cart-wrapper .cart-container .component-ref h3.toggle-web::before, .cart-wrapper .cart-container .component-ref h3.toggle-web::after {
+  width: calc(50% - 105px);
+}
+.cart-wrapper .cart-container .component-ref h3.toggle-print {
+  display: none;
+}
+.cart-wrapper .cart-container .component-ref > p {
+  margin-top: 30px;
+  font-size: 1.15rem;
+  line-height: 1.5em;
+  text-align: center;
+}
+.cart-wrapper .cart-container .component-ref .default-msg {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  line-height: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.15rem;
+  line-height: 1em;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount > li + li {
+  margin-top: 15px;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount > li span {
+  margin: 0 3px 0 6px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.4rem;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount > li .location-selector .send-fee > .send-fee-note {
+  font-size: 0.85rem;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount .total-fee {
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 20px;
+  text-align: right;
+  border-top: 1px solid #333;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount .total-fee.direction {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.9rem;
+  color: #517dac;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .calc-result .calc-amount .total-fee span {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.cart-wrapper .cart-container .component-ref .flex-wrapper .offer-contents {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+}
+.cart-wrapper .cart-container .component-ref .for-only-print {
+  display: none;
+}
+.cart-wrapper .cart-container .completion-notification-modal {
+  display: grid;
+  place-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 106;
+}
+.cart-wrapper .cart-container .completion-notification-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+.cart-wrapper .cart-container .completion-notification-modal .completion-notification-modal-wrapper {
+  width: 600px;
+  padding: 3rem;
+  line-height: 1.7;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #aaa;
+}
+.cart-wrapper .cart-container .completion-notification-modal .completion-notification-modal-wrapper h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.cart-wrapper .cart-container .completion-notification-modal .completion-notification-modal-wrapper button {
+  margin-top: 30px;
+  padding: 0.25rem 5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid #333;
+  transition: 0.5s;
+  transform: translateY(2px);
+}
+.cart-wrapper .cart-container .completion-notification-modal .completion-notification-modal-wrapper button:hover {
+  color: #fff;
+  background-color: #777;
+  border: 1px solid #777;
+  transform: translateY(0);
+  box-shadow: 0 2px 5px #aaa;
+}
+
+@media print {
+  h3.toggle-web {
+    display: none;
+  }
+}
+
+@media print {
+  h3.toggle-print::before, h3.toggle-print::after {
+    position: unset;
+  }
+}
+
+@media print {
+  .cart-wrapper.active {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+    background-color: #fff;
+    background-color: red;
+    transition: 0.7s;
+    visibility: hidden;
+    opacity: 0;
+    overflow: scroll;
+    background-color: red;
+  }
+  .cart-wrapper.active.active {
+    right: 0;
+    visibility: visible;
+    opacity: 0.95;
+  }
+}
+
+@media print {
+  .component-ref {
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+  }
+  .component-ref h3.toggle-print {
+    margin-bottom: 1rem;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .component-ref h3.toggle-print.toggle-web {
+    display: none;
+  }
+  .component-ref > p {
+    text-align: center;
+  }
+  .component-ref .flex-wrapper .calc-result .calc-amount {
+    display: block;
+    margin-top: 20px;
+    padding-right: 55%;
+  }
+  .component-ref .flex-wrapper .calc-result .calc-amount li {
+    margin-top: 10px;
+    text-align: right;
+  }
+  .component-ref .flex-wrapper .calc-result .calc-amount li .location-selector {
+    display: unset;
+  }
+  .component-ref .flex-wrapper .calc-result .calc-amount li .location-selector .send-fee {
+    text-align: right;
+  }
+}
+
+@media print {
+  .cart-index {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1em;
+  }
+  .cart-index .result-wrapper {
+    padding-right: 55%;
+    margin-top: 40px;
+  }
+  .cart-index .calc-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 15px;
+  }
+  .cart-index .calc-amount > li + li {
+    margin-top: 8px;
+  }
+  .cart-index .calc-amount span {
+    margin: 0 3px 0 6px;
+    font-size: 1rem;
+  }
+  .cart-index .calc-amount .total-fee {
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  .cart-index .calc-amount .total-fee.direction {
+    color: #517dac;
+  }
+  .cart-index .calc-amount .total-fee span {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}
+
+@media print {
+  .for-only-print {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 9rem;
+    right: 2rem;
+    width: 45%;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .for-only-print .wrapper h3 {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    line-height: 1em;
+    text-align: left;
+    border-bottom: 1px solid #c2bdb8;
+  }
+  .for-only-print .wrapper h3:not(:first-of-type) {
+    margin-top: 20px;
+  }
+  .for-only-print .wrapper dl div {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+  }
+  .for-only-print .wrapper dl div + div {
+    border-top: 1px dotted #777;
+  }
+  .for-only-print .wrapper dl div dt {
+    padding-left: 1em;
+    font-size: 0.95rem;
+    font-weight: 400;
+    width: 8rem;
+  }
+  .for-only-print .wrapper dl div dt.finacial-name {
+    padding-left: 0;
+  }
+  .for-only-print .wrapper dl div dd {
+    width: calc(100% - 8rem);
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 500;
+    white-space: normal;
+  }
+  .for-only-print .wrapper dl.financial-institutions-name {
+    border: 3px solid #777;
+  }
+  .for-only-print .wrapper dl:first-of-type {
+    margin-bottom: 10px;
+  }
+  .for-only-print .wrapper dl.entrys-information {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .for-only-print .wrapper dl.entrys-information div {
+    padding: 3px;
+    margin: 0;
+    border-top: none;
+  }
+  .for-only-print .paste-area {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 26rem;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px dotted #333;
+  }
+}
+
+@media (width < 768px) {
+  .cart-wrapper .cart-container {
+    width: 100%;
+    margin: 0;
+    padding: 9rem 1rem 3rem;
+  }
+  .cart-wrapper .cart-container .component-ref .flex-wrapper {
+    display: block;
+  }
+  .cart-wrapper .cart-container .component-ref .flex-wrapper .offer-contents .form .input-wrapper > div {
+    display: block;
+  }
+  .cart-wrapper .cart-container .component-ref .flex-wrapper .offer-contents .form .with-note-container > label > .note {
+    left: 0;
+  }
+  .cart-wrapper .cart-container .component-ref .flex-wrapper .offer-contents .send-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (width < 768px) {
+  .cart-wrapper .cart-container .completion-notification-modal .completion-notification-modal-wrapper {
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+}/*# sourceMappingURL=OrderResult.css.map */

@@ -1,0 +1,234 @@
+@charset "UTF-8";
+.form {
+  margin: 0 auto;
+  width: min(600px, 100%);
+}
+.form .input-wrapper {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: #777;
+}
+.form .input-wrapper > .note {
+  position: absolute;
+  top: -1.8rem;
+  left: 6rem;
+}
+.form .input-wrapper > div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.form .input-wrapper > div + div {
+  margin-top: 30px;
+}
+.form .input-wrapper > div label {
+  position: relative;
+  width: 6rem;
+  font-size: 1rem;
+  line-height: 1.75em;
+  text-align: left;
+  color: #777;
+}
+.form .input-wrapper > div label > .note {
+  position: absolute;
+  top: -1.75rem;
+  left: 6rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.form .input-wrapper > div label.required > span.required {
+  position: relative;
+}
+.form .input-wrapper > div label.required > span.required::after {
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+  content: "※";
+  font-size: 0.5rem;
+}
+.form .input-wrapper > div label .error-msg {
+  position: absolute;
+  top: 1.7rem;
+  left: 85px;
+  width: 100%;
+  font-size: 0.85rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: red;
+  background-color: unset;
+  border: unset;
+}
+.form .input-wrapper > div label .error-msg.color-green {
+  color: #517dac;
+}
+.form .input-wrapper > div input, .form .input-wrapper > div textarea, .form .input-wrapper > div div, .form .input-wrapper > div select {
+  width: 100%;
+  padding: 0.5em 1em;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  white-space: normal;
+}
+.form .input-wrapper > div textarea {
+  height: 10rem;
+}
+.form .input-wrapper > div input::-moz-placeholder, .form .input-wrapper > div textarea::-moz-placeholder {
+  color: #777 -middle;
+}
+.form .input-wrapper > div input::placeholder, .form .input-wrapper > div textarea::placeholder {
+  color: #777 -middle;
+}
+.form .input-wrapper .with-note-container {
+  position: relative;
+  margin-top: 40px;
+}
+.form .input-wrapper .with-note-container > label > .note {
+  position: absolute;
+  top: -1.8rem;
+  left: 6rem;
+}
+.form .privacy-policy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  font-size: 0.8rem;
+  line-height: 1em;
+  text-align: center;
+}
+.form .privacy-policy .privacy-policy-anchor {
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #fff;
+  background-color: #333;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.form .privacy-policy .privacy-policy-anchor span {
+  font-size: 0.5rem;
+}
+.form .privacy-policy .check-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.form .privacy-policy .check-box input[type=checkbox] {
+  position: relative;
+  margin-right: 5px;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid #000;
+}
+.form .privacy-policy .check-box input[type=checkbox]:checked:before {
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  transform: rotate(50deg);
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  content: "";
+}
+.form .privacy-policy .check-box .error-msg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.5rem;
+  white-space: nowrap;
+  color: red;
+}
+.form .send-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.form .send-buttons .send-btn {
+  width: 100%;
+}
+.form .send-buttons .send-btn.last-of-type {
+  display: none;
+}
+.form .send-buttons .send-btn .note {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.form .input-reset-btn, .form .input-print-btn, .form .input-mail-btn {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  padding: 11px 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #333;
+  transform: translateY(2px);
+  transition: 0.3s;
+}
+.form .input-reset-btn.input-reset-btn, .form .input-print-btn.input-reset-btn, .form .input-mail-btn.input-reset-btn {
+  width: 50%;
+  margin: 30px auto 0;
+}
+.form .input-reset-btn:hover, .form .input-print-btn:hover, .form .input-mail-btn:hover {
+  color: #fff;
+  background-color: #999;
+  border: 1px solid #999;
+  box-shadow: 0 2px 5px #999;
+  transform: translateY(0);
+  opacity: 0.5;
+}
+
+.notice {
+  color: #517dac;
+}
+
+@media print {
+  .form .input-wrapper {
+    display: none;
+  }
+}
+
+@media print {
+  .form .privacy-policy.non-print {
+    display: none;
+  }
+  .form .send-buttons.non-print {
+    display: none;
+  }
+  .form .input-reset-btn.non-print {
+    display: none;
+  }
+}
+
+@media (width < 768px) {
+  .form .input-wrapper .with-note-container > label > .note {
+    top: -1.5rem;
+  }
+}
+
+@media (width < 768px) {
+  .form .input-wrapper > div label .error-msg {
+    top: 0;
+    left: 4.25rem;
+  }
+}
+
+.underLine {
+  -webkit-text-decoration: underline 1px #BB9A01;
+          text-decoration: underline 1px #BB9A01;
+  text-underline-offset: 3px;
+}/*# sourceMappingURL=OrgForm.css.map */

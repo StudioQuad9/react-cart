@@ -75,18 +75,24 @@ const OrderResult = ({
         {/* プリントアウト共用部 */}
         <div className="component-ref" ref={componentRef}>
           <h3 className="toggle-web">お求め一覧</h3>
-          <h3 className="toggle-print">お守り・授与品のご案内&nbsp;FAX申込用紙印刷</h3>
+          <h3 className="toggle-print">
+            お守り・授与品のご案内&nbsp;FAX申込用紙印刷
+          </h3>
           <p>お申し込み社務所到着後、翌日の午前中に執り行います。</p>
           {isEmpty(cartItems) && (
-            <div className="default-msg">現在、登録されたお守り・授与品はありません。</div>
+            <div className="default-msg">
+              現在、登録されたお守り・授与品はありません。
+            </div>
           )}
           <div className="flex-wrapper">
             <div className="calc-result">
               <ul className="calc-amount">
-                <li>授与料小計<span>{reloadCartItems()[0]}</span>円</li>
                 <li>
-                  <SendFee 
-                    totalWeight={reloadCartItems()[1]} 
+                  授与料小計<span>{reloadCartItems()[0]}</span>円
+                </li>
+                <li>
+                  <SendFee
+                    totalWeight={reloadCartItems()[1]}
                     setTotalSendFee={setTotalSendFee}
                     prefectureSelected={prefectureSelected}
                     setPrefectureSelected={setPrefectureSelected}
@@ -94,18 +100,23 @@ const OrderResult = ({
                   />
                 </li>
                 {/* <li>カートの重量合計<span>{reloadCartItems()[1]}</span>g</li> */}
-                {
-                  totalSendFee 
-                    ? <li className="total-fee">授与料合計<span>{reloadCartItems()[0]+totalSendFee}</span>円</li>
-                    : <li className="total-fee direction">授与料合計を出すには発送先を選択してください。</li>
-                }
+                {totalSendFee ? (
+                  <li className="total-fee">
+                    授与料合計<span>{reloadCartItems()[0] + totalSendFee}</span>
+                    円
+                  </li>
+                ) : (
+                  <li className="total-fee direction">
+                    授与料合計を出すには発送先を選択してください。
+                  </li>
+                )}
               </ul>
               <div className="cart-index">
                 <div className="result-wrapper">
                   {cartItems.map((cartItem, idx) => (
                     <div key={idx}>
                       <CartItem
-                        key={idx} 
+                        key={idx}
                         {...cartItem}
                         totalFeeHash={totalFeeHash}
                         setTotalFee={setTotalFee}
@@ -115,7 +126,7 @@ const OrderResult = ({
                         hasItem={hasItem}
                         // goSyuinChouAction={goSyuinChouAction}
                       />
-                  </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -144,7 +155,8 @@ const OrderResult = ({
                 sendCompleteToggle={sendCompleteToggle}
                 sendInputErrorToggle={sendInputErrorToggle}
                 handlePrivacyPolicy={handlePrivacyPolicy}
-              />   
+                reloadCartItems={reloadCartItems}
+              />
 
               {/* ___リファクタリング start___ */}
               <div className="for-only-print">
@@ -204,7 +216,8 @@ const OrderResult = ({
                     <div>
                       <dt>ご住所</dt>
                       <dd>
-                        {prefectureSelected}{address}
+                        {prefectureSelected}
+                        {address}
                       </dd>
                     </div>
                     <div>
@@ -221,9 +234,11 @@ const OrderResult = ({
                     </div>
                   </dl>
                 </div>
-                
+
                 <div className="paste-area">
-                  ここに郵便振込用紙の<br />控えを貼付けてください。
+                  ここに郵便振込用紙の
+                  <br />
+                  控えを貼付けてください。
                 </div>
               </div>
               {/* ___リファクタリング end___ */}
@@ -257,32 +272,46 @@ const OrderResult = ({
                   tel={tel}
                   note={note}
                   prefectureSelected={prefectureSelected}
-                />             
+                />
               </div>
             </div>
           </div>
-        </div> 
+        </div>
 
-        <PrivacyPolicy 
-          privacyPolicyToggle={privacyPolicyToggle} 
+        <PrivacyPolicy
+          privacyPolicyToggle={privacyPolicyToggle}
           handleBack={handleBack}
         />
 
-        <div className={`completion-notification-modal ${sendComplete ? 'active' : ''}`}>
+        <div
+          className={`completion-notification-modal ${
+            sendComplete ? "active" : ""
+          }`}
+        >
           <div className="completion-notification-modal-wrapper">
-            <h1>送信完了</h1>
-            <p>ご依頼いただいた内容をお申し込みのメールアドレス宛てに送信をいたしました。メールが届かない場合は、お手数ですが再度フォームから申し込み手続きをしていただきますようお願いいたします。</p>
+            <h1>受信メールをご確認ください</h1>
+            <p>
+              ご依頼いただいた内容をお申し込みのメールアドレス宛てに送信をいたしました。送金内容を添付し、引用返信くださるとお申込完了です。メールが届かない場合は、お手数ですが再度フォームから申し込み手続きをしていただきますようお願いいたします。
+            </p>
             <button onClick={sendCompleteToggle}>閉じる</button>
           </div>
-        </div>  
+        </div>
 
-        <div className={`completion-notification-modal ${sendInputError ? 'active' : ''}`}>
+        <div
+          className={`completion-notification-modal ${
+            sendInputError ? "active" : ""
+          }`}
+        >
           <div className="completion-notification-modal-wrapper">
             <h1>入力内容に問題があり</h1>
-            <p>入力内容に問題があるようです。<br />入力画面に戻りエラー表示の内容をご確認ください。</p>
+            <p>
+              入力内容に問題があるようです。
+              <br />
+              入力画面に戻りエラー表示の内容をご確認ください。
+            </p>
             <button onClick={sendInputErrorToggle}>戻る</button>
           </div>
-        </div>               
+        </div>
       </div>
     </div>
   );
