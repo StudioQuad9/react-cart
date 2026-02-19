@@ -8,7 +8,7 @@ const SyuinChou = ({ selectedItemId, handleBackClick }) => {
       className={`modal ${selectedItemId ? "active" : ""}`}
     >
       <div className="container syuin-chou">
-        <h1>冬季限定御朱印</h1>
+        <h1>冬季限定御朱印帳</h1>
         <div className="catch-on-modal">4年に1度のスポーツの祭典</div>
         <div className="photo-frame">
           <img src={Images.syuin_chou_limited_2026} alt="" />

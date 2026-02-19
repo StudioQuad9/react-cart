@@ -22,7 +22,7 @@ const Footer = () => {
               <li className="access-tel-fax"><span>電話</span>：<a href="tel:075-441-3810">075-441-3810</a></li>
               <li className="access-tel-fax"><span className="en-tume01">FAX</span>：075-441-3820</li>
             </ul>
-            <ul class="open-close-time">
+            <ul className="open-close-time">
               <li>参拝時間： 8時から17時</li>
               <li>授与所開所時間： 8時から16時30分</li>
             </ul>            

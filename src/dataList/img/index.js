@@ -1,4 +1,6 @@
 import ofuda_family_safety from "./ofuda_family_safety.png";
+import ofuda_family_safety_kamidana from "./ofuda_family_safety_kamidana.png";
+import ofuda_family_safety_kanidana from "./ofuda_family_safety_kanidana.png";
 import ofuda_yaku_yoke from "./ofuda_yaku_yoke.png";
 import ofuda_sen_ryu from "./ofuda_sen_ryu.png";
 import thokon_tukusu_mamori from "./thokon_tukusu_mamori.png";
@@ -56,6 +58,8 @@ import toukon_img03 from "./toukon-img03.png";
 
 const image = {
   ofuda_family_safety: ofuda_family_safety,
+  ofuda_family_safety_kamidana: ofuda_family_safety_kamidana,
+  ofuda_family_safety_kanidana: ofuda_family_safety_kanidana,
   ofuda_yaku_yoke: ofuda_yaku_yoke,
   ofuda_sen_ryu: ofuda_sen_ryu,
   thokon_tukusu_mamori: thokon_tukusu_mamori,

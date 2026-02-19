@@ -62,6 +62,17 @@ const SendFee = ({
   // 送料の計算
   // fee[{ propsで方面 }][{ propsでグラム数 }]
   // 条件分岐で回さないとエラーになる。
+
+  // イレギュラーな処理用。
+  // const kamidanaTrue = cartItems.some((item) => { 
+  //   if (
+  //     item.types["家内安全と神棚セット(+0円)"] > 0 ||
+  //     item.types["方除・魔除・赤札と神棚セット(+0円)"] > 0 ||
+  //     item.types["潜龍大神と神棚セット(+0円)"] > 0
+  //   ) {
+  //     return true;
+  //   }
+  // });
   
   let sendFee = 0;
   const getSyuinChouCount = () => {
@@ -79,7 +90,7 @@ const SendFee = ({
       sendFee = 700;
       break;
     case syuinChouCount >= 4:
-      sendFee = direction && fee[direction][201];      
+      sendFee = direction && fee[direction][201];
       break;
     case totalWeight < 51:
       sendFee = direction && fee[direction][50];

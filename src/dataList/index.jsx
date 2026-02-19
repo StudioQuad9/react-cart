@@ -15,6 +15,26 @@ const data = [
     weight: 23,
   },
   {
+    pid: "ofuda_family_safety_kamidana",
+    image: image.ofuda_family_safety_kamidana,
+    category: "御神札",
+    name: { 御神札: 0 },
+    types: { "家内安全と神棚セット": 0 },
+    colors: {},
+    price: 800,
+    weight: 153, // 201g - 48g SendFee.jsxの方面別送料を参照すればわかる。
+  },
+  {
+    pid: "ofuda_family_safety_kanidana",
+    image: image.ofuda_family_safety_kanidana,
+    category: "御神札",
+    name: { 御神札: 0 },
+    types: { "家内安全と簡易神棚セット": 0 },
+    colors: {},
+    price: 1300,
+    weight: 61,
+  },
+  {
     pid: "ofuda_yaku_yoke",
     image: image.ofuda_yaku_yoke,
     category: "御神札",
@@ -134,7 +154,7 @@ const data = [
     types: {},
     colors: {},
     price: 1000,
-    weight: 21,
+    weight: 260,
   },
   {
     pid: "traffic_safety_sticker",
@@ -373,12 +393,10 @@ const data = [
     pid: "syuin_chou_limited",
     image: image.syuin_chou_limited,
     category: "授与品",
-    name: { 冬季限定御朱印: 0 },
-    // 250131 Fix
-    // types: { 御朱印帳: 0, 限定御朱印帳: 0 },
-    types: { 冬季限定御朱印: 0 },
+    name: { 冬季限定御朱印帳: 0 },
+    types: { 冬季限定御朱印帳: 0 },
     colors: {},
-    price: 2000,
+    price: 3000,
     weight: 180,
   },
   {
